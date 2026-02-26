@@ -106,6 +106,21 @@ window#waybar > box > * > * {
     background-color: rgba(136, 146, 240, 0.1);
 }
 
+#custom-notification {
+    color: #c850f0;
+    background-color: rgba(200, 80, 240, 0.1);
+}
+
+#custom-notification.has-notifs {
+    color: #ea580c;
+    background-color: rgba(234, 88, 12, 0.15);
+}
+
+#custom-notification.empty {
+    color: #6b7280;
+    background-color: rgba(107, 114, 128, 0.08);
+}
+
 #tray {
     background-color: rgba(216, 218, 245, 0.4);
 }

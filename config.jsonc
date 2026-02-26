@@ -14,6 +14,7 @@
         "network",
         "group/volume",
         "hyprland/language",
+        "custom/notification",
         "tray",
         "battery",
         "clock"
@@ -76,6 +77,14 @@
         "format": "+",
         "on-click": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
         "tooltip": false
+    },
+    "custom/notification": {
+        "exec": "count=$(makoctl list 2>/dev/null | grep -c '^Notification'); if [ \"$count\" -gt 0 ]; then echo '{\"text\": \"'\"$count\"'\", \"tooltip\": \"'\"$count\"' notification(s)\", \"class\": \"has-notifs\"}'; else echo '{\"text\": \"\", \"tooltip\": \"No notifications\", \"class\": \"empty\"}'; fi",
+        "return-type": "json",
+        "format": "󰂚 {}",
+        "interval": 3,
+        "on-click": "makoctl dismiss",
+        "on-click-right": "makoctl dismiss --all"
     },
     "tray": {
         "icon-size": 18,
