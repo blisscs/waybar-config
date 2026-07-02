@@ -101,6 +101,25 @@ window#waybar > box > * > * {
     background-color: rgba(107, 114, 128, 0.1);
 }
 
+#backlight {
+    color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.1);
+}
+
+#custom-brightness-down,
+#custom-brightness-up {
+    color: #f59e0b;
+    background-color: rgba(245, 158, 11, 0.15);
+    padding: 0 6px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+#custom-brightness-down:hover,
+#custom-brightness-up:hover {
+    background-color: rgba(245, 158, 11, 0.3);
+}
+
 #language {
     color: #8892f0;
     background-color: rgba(136, 146, 240, 0.1);

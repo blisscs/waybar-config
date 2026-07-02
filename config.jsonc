@@ -13,6 +13,7 @@
         "memory",
         "network",
         "group/volume",
+        "group/brightness",
         "hyprland/language",
         "custom/notification",
         "tray",
@@ -73,6 +74,38 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
         "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
         "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    },
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}%",
+        "format-icons": [
+            "󰛩",
+            "󱩎",
+            "󰖨",
+            "󰽨",
+            "󰖙"
+        ],
+        "on-click": "brightnessctl set 0%",
+        "on-scroll-up": "brightnessctl -s set +5%",
+        "on-scroll-down": "brightnessctl set 5%-"
+    },
+    "group/brightness": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/brightness-down",
+            "backlight",
+            "custom/brightness-up"
+        ]
+    },
+    "custom/brightness-down": {
+        "format": "−",
+        "on-click": "brightnessctl set 5%-",
+        "tooltip": false
+    },
+    "custom/brightness-up": {
+        "format": "+",
+        "on-click": "brightnessctl -s set +5%",
+        "tooltip": false
     },
     "custom/volume-up": {
         "format": "+",
