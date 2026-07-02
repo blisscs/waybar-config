@@ -16,6 +16,7 @@
         "hyprland/language",
         "custom/notification",
         "tray",
+        "power-profiles-daemon",
         "battery",
         "clock"
     ],
@@ -89,6 +90,17 @@
     "tray": {
         "icon-size": 18,
         "spacing": 8
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "󰓅",
+            "balanced": "󰾅",
+            "power-saver": "󰌪"
+        }
     },
     "battery": {
         "states": {

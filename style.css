@@ -134,6 +134,26 @@ window#waybar > box > * > * {
     background-color: rgba(220, 38, 38, 0.15);
 }
 
+#power-profiles-daemon {
+    color: #7c8cff;
+    background-color: rgba(124, 140, 255, 0.1);
+}
+
+#power-profiles-daemon.performance {
+    color: #dc2626;
+    background-color: rgba(220, 38, 38, 0.1);
+}
+
+#power-profiles-daemon.balanced {
+    color: #7c8cff;
+    background-color: rgba(124, 140, 255, 0.1);
+}
+
+#power-profiles-daemon.power-saver {
+    color: #2ea043;
+    background-color: rgba(46, 160, 67, 0.1);
+}
+
 #battery {
     color: #2ea043;
     background-color: rgba(46, 160, 67, 0.1);
