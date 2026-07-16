@@ -1,6 +1,6 @@
 # Waybar Config
 
-A Waybar configuration for Hyprland with an ashell-inspired light theme with Catppuccin-compatible accent colors.
+A Waybar configuration for Hyprland with a modern, warm dark theme and soft peach/coral accents.
 
 `style.css` sets the module font stack to:
 

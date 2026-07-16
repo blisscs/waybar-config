@@ -1,9 +1,12 @@
 {
     "layer": "top",
-    "position": "top",
-    "spacing": 4,
+    "position": "bottom",
+    "spacing": 6,
+    "height": 32,
     "modules-left": [
-        "hyprland/workspaces"
+        "custom/launcher",
+        "hyprland/workspaces",
+        "privacy"
     ],
     "modules-center": [
         "hyprland/window"
@@ -16,6 +19,7 @@
         "group/brightness",
         "hyprland/language",
         "custom/notification",
+        "custom/weather",
         "tray",
         "power-profiles-daemon",
         "battery",
@@ -31,7 +35,8 @@
         "separate-outputs": true
     },
     "hyprland/language": {
-        "format": "󰌌 {}"
+        "format": "󰌌 {}",
+        "min-length": 4
     },
     "cpu": {
         "format": " {usage}%",
@@ -121,8 +126,21 @@
         "on-click-right": "makoctl dismiss --all"
     },
     "tray": {
-        "icon-size": 18,
-        "spacing": 8
+        "icon-size": 20,
+        "spacing": 10
+    },
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": "Application launcher",
+        "on-click": "pkill wofi || wofi --show drun",
+        "on-click-right": "pkill wlogout || wlogout"
+    },
+    "custom/weather": {
+        "exec": "curl -fsS 'wttr.in/?format=%c+%t+%h' 2>/dev/null || echo ''",
+        "interval": 1800,
+        "tooltip": true,
+        "tooltip-format": "Weather",
+        "format": "{}"
     },
     "power-profiles-daemon": {
         "format": "{icon}",
@@ -140,9 +158,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-charging": "󰂅 {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "{icon}  {capacity}%",
+        "format-charging": "󰂅  {capacity}%",
+        "format-plugged": "  {capacity}%",
         "format-icons": [
             "󰂎",
             "󰂂",
@@ -153,8 +171,8 @@
         "tooltip-format": "{timeTo}"
     },
     "clock": {
-        "format": " {:%a %Y-%m-%d %H:%M:%S %Z}",
-        "interval": 1,
+        "format": " {:%a %b %d  %H:%M}",
+        "interval": 60,
         "tooltip-format": "<tt>{calendar}</tt>"
     },
     "privacy": {
